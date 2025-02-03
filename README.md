@@ -2,8 +2,8 @@
 -Este es un proyecto destinado a la venta de lentes de sol y marcos en la provincia de Buenos Aires.
 
 ### Paginas de referencia:
- - [Gafaspremium](https://gafaspremium.ar/)
- - [OtocasMontero](https://opticasmontenero.com.ar/)
+ - [GafasPremium](https://gafaspremium.ar/)
+ - [OpticasMontero](https://opticasmontenero.com.ar/)
  - [Glasses-Import](https://www.glasses-import.com.ar/)
  - [OpticasLookout](https://www.opticaslookout.com.ar/)
 
