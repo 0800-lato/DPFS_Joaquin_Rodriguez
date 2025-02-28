@@ -1,0 +1,9 @@
+:root {
+  --black: black;
+  --white: hsl(72, 56%, 95%);
+}
+
+.banner {
+  height: 250px;
+  background-color: gray;
+}

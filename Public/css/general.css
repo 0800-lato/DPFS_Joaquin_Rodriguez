@@ -1,0 +1,69 @@
+:root {
+  --black: black;
+  --white: hsl(72, 56%, 95%);
+  --gray: gray;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--white);
+  font-family: "Itim", cursive;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.navbar__top {
+  background-color: gray;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+
+.top__icon {
+  color: var(--white);
+  font-size: 1.5rem;
+  display: flex;
+  gap: 10px;
+}
+
+.top__logo {
+  display: flex;
+  padding: 5px 10px;
+}
+
+.navbar__button {
+  background-color: var(--grey);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.navbar__logo {
+  width: 150px;
+}
+
+.navbar__link {
+  color: var(--white);
+  font-size: 1.2rem;
+  display: flex;
+  gap: 50px;
+}
+
+@media (min-width: 400px) {
+  .navbar__links {
+    font-size: 0.8rem;
+  }
+}

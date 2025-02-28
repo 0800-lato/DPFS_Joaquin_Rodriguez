@@ -1,0 +1,15 @@
+{
+  "name": "dpfs-printall",
+  "version": "1.0.0",
+  "description": "- Este es un proyecto destinado a la venta de lentes de sol y marcos en la provincia de Buenos Aires.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "nodemon": "^3.1.9"
+  }
+}
