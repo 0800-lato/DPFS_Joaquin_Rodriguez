@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+  <body>
+    <%- include('./partials/navbar.ejs') %>
+    <div class="relative w-full max-w-6xl overflow-hidden">
+      <!-- Contenedor de imágenes -->
+      <div class="relative">
+        <img
+          id="carouselImage"
+          src="/images/nose.jpg"
+          class="w-full h-96 object-cover justify-content-normal"
+        />
+      </div>
+      <!-- Botones de navegación -->
+      <button
+        class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-[#d2a679] text-white px-4 py-2 rounded-md"
+        onclick="prevSlide()"
+      >
+        &#10094;
+      </button>
+      <button
+        class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#d2a679] text-white px-4 py-2 rounded-md"
+        onclick="nextSlide()"
+      >
+        &#10095;
+      </button>
+    </div>
+    <script>
+      const images = [
+        "/images/imagen1.jpg",
+        "/images/imagen2.jpg",
+        "/images/imagen3.jpg",
+      ];
+      let index = 0;
+      function updateCarousel() {
+        document.getElementById("carouselImage").src = images[index];
+      }
+      function nextSlide() {
+        index = (index + 1) % images.length;
+        updateCarousel();
+      }
+      function prevSlide() {
+        index = (index - 1 + images.length) % images.length;
+        updateCarousel();
+      }
+    </script>
+    <section class="text-center">
+      <h2>tipos de productos</h2>
+      <p>Ofrecemos una amplia cantidad de productos para todos los gustos</p>
+      <P> Macrame, crochet, hilorama, mostacillas y a dos agujas</P>
+    </section>
+    <section>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
+      <!-- Tarjeta de producto -->
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <img src="/images/girasol.jpg" alt="Producto 1" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <a href="./productDetail"><h3 class="text-lg font-semibold">Producto 1</h3></a>
+            <p class="text-gray-600">Descripción breve del producto.</p>
+            <div class="flex justify-between items-center mt-4">
+                <span class="text-xl font-bold text-[#d2a679]">$29.99</span>
+                <a href="/addProduct">
+                  <button class="bg-[#d2a679] text-white px-4 py-2 rounded-md transition duration-300 ease-in-out hover:bg-[#b2825e] hover:scale-105">Agregar</button>
+                </a>
+            </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta de producto -->
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <img src="/images/llavero.jpg" alt="Producto 2" class="w-full h-48 object-cover">
+        <div class="p-4">
+            <h3 class="text-lg font-semibold">Producto 2</h3>
+            <p class="text-gray-600">Descripción breve del producto.</p>
+            <div class="flex justify-between items-center mt-4">
+                <span class="text-xl font-bold text-[#d2a679]">$39.99</span>
+                <a href="/addProduct">
+                  <button class="bg-[#d2a679] text-white px-4 py-2 rounded-md transition duration-300 ease-in-out hover:bg-[#b2825e] hover:scale-105">Agregar</button>
+                </a>
+            </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta de producto -->
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <img src="/images/muniequera.jpg" alt="Producto 3" class="w-full h-48 object-cover">
+        <div class="p-4">
+            <h3 class="text-lg font-semibold">Producto 3</h3>
+            <p class="text-gray-600">Descripción breve del producto.</p>
+            <div class="flex justify-between items-center mt-4">
+                <span class="text-xl font-bold text-[#d2a679]">$49.99</span>
+                <a href="/addProduct">
+                  <button class="bg-[#d2a679] text-white px-4 py-2 rounded-md transition duration-300 ease-in-out hover:bg-[#b2825e] hover:scale-105">Agregar</button>
+                </a>
+            </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta de producto -->
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <img src="/images/torreEiffel.jpg" alt="Producto 4" class="w-full h-48 object-cover">
+        <div class="p-4">
+            <h3 class="text-lg font-semibold">Producto 4</h3>
+            <p class="text-gray-600">Descripción breve del producto.</p>
+            <div class="flex justify-between items-center mt-4">
+                <span class="text-xl font-bold text-[#d2a679]">$59.99</span>
+                <a href="/src/views/addProduct.ejs">
+                  <button class="bg-[#d2a679] text-white px-4 py-2 rounded-md transition duration-300 ease-in-out hover:bg-[#b2825e] hover:scale-105">Agregar</button>
+                </a>
+            </div>
+        </div>
+      </div>
+    </div>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>
