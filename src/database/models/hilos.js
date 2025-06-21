@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes)=> {
 
     Hilo.associate = (model)=>{
         Hilo.hasMany(model.Product,{
-            as: "users",
+            as: "products",
             foreignKey: "hilo_id"
         })
     };
