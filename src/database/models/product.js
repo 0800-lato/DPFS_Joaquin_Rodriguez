@@ -19,10 +19,10 @@ module.exports = (sequelize, DataTypes)=> {
         price: {
             type: DataTypes.INTEGER(11)
         },
-        // Category: {
+        // category: {
         //     type: DataTypes.STRING(255)
         // },
-        // Hilo: {
+        // hilo: {
         //     type: DataTypes.STRING(100)
         // },
         image: {
@@ -46,13 +46,13 @@ module.exports = (sequelize, DataTypes)=> {
 
     Product.associate = (model)=>{
         // Categorias
-        Product.belongsTo(model.category, {
-            as: "category",
+        Product.belongsTo(model.Category, {
+            as: "Category",
             foreignKey: "category_id"
         })
         // File
-        Product.belongsTo(model.hilos, {
-            as: "hilo",
+        Product.belongsTo(model.Hilo, {
+            as: "Hilo",
             foreignKey: "hilo_id"
         })
     };

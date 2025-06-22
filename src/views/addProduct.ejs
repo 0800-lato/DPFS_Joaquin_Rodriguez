@@ -17,6 +17,9 @@
           placeholder="Ej: Camiseta Deportiva"
           class="w-full p-2 border rounded-md"
         />
+        <% if (locals.errors?.name) { %>
+        <p class="error"><%= locals.errors.name.msg %></p>
+        <% } %>
       </div>
 
       <div class="flex flex-col">
@@ -27,6 +30,9 @@
           placeholder="Ej: 49.99"
           class="w-full p-2 border rounded-md"
         />
+        <% if (locals.errors?.price) { %>
+        <p class="error"><%= locals.errors.name.msg %></p>
+        <% } %>
       </div>
 
       <div class="flex flex-col">
@@ -36,6 +42,9 @@
           placeholder="Descripción breve del producto"
           class="w-full p-2 border rounded-md"
         ></textarea>
+        <% if (locals.errors?.description) { %>
+        <p class="error"><%= locals.errors.name.msg %></p>
+        <% } %>
       </div>
 
       <div class="flex flex-col">

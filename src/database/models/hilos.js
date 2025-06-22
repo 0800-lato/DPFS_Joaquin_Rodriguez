@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes)=> {
 
-    const alias = 'hilos'
+    const alias = 'Hilo'
 
     const cols = {
         name: {
@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes)=> {
 
     Hilo.associate = (model)=>{
         Hilo.hasMany(model.Product,{
-            as: "products",
+            as: "Products",
             foreignKey: "hilo_id"
         })
     };

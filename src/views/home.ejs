@@ -52,7 +52,7 @@
     </section>
     <section>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
-      <!-- Tarjeta de producto -->
+      <!-- Tarjeta de producto
       <div class="bg-white shadow-lg rounded-lg overflow-hidden">
         <img src="/images/girasol.jpg" alt="Producto 1" class="w-full h-48 object-cover">
         <div class="p-4">
@@ -65,53 +65,24 @@
                 </a>
             </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Tarjeta de producto -->
+    <% models.forEach(model => { %>
       <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <img src="/images/llavero.jpg" alt="Producto 2" class="w-full h-48 object-cover">
+        <img src="./images/modelos/<%= model.image %>" alt="Producto 2" class="w-full h-48 object-cover">
         <div class="p-4">
-            <h3 class="text-lg font-semibold">Producto 2</h3>
-            <p class="text-gray-600">Descripción breve del producto.</p>
+            <h3 class="text-lg font-semibold"><%= model.name %></h3>
+            <p class="text-gray-600"><%= model.description %></p>
             <div class="flex justify-between items-center mt-4">
-                <span class="text-xl font-bold text-[#d2a679]">$39.99</span>
-                <a href="/addProduct">
+                <span class="text-xl font-bold text-[#d2a679]">$<%= model.price %></span>
+                <a href="product/addProduct">
                   <button class="bg-[#d2a679] text-white px-4 py-2 rounded-md transition duration-300 ease-in-out hover:bg-[#b2825e] hover:scale-105">Agregar</button>
                 </a>
             </div>
         </div>
       </div>
-
-      <!-- Tarjeta de producto -->
-      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <img src="/images/muniequera.jpg" alt="Producto 3" class="w-full h-48 object-cover">
-        <div class="p-4">
-            <h3 class="text-lg font-semibold">Producto 3</h3>
-            <p class="text-gray-600">Descripción breve del producto.</p>
-            <div class="flex justify-between items-center mt-4">
-                <span class="text-xl font-bold text-[#d2a679]">$49.99</span>
-                <a href="/addProduct">
-                  <button class="bg-[#d2a679] text-white px-4 py-2 rounded-md transition duration-300 ease-in-out hover:bg-[#b2825e] hover:scale-105">Agregar</button>
-                </a>
-            </div>
-        </div>
-      </div>
-
-      <!-- Tarjeta de producto -->
-      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <img src="/images/torreEiffel.jpg" alt="Producto 4" class="w-full h-48 object-cover">
-        <div class="p-4">
-            <h3 class="text-lg font-semibold">Producto 4</h3>
-            <p class="text-gray-600">Descripción breve del producto.</p>
-            <div class="flex justify-between items-center mt-4">
-                <span class="text-xl font-bold text-[#d2a679]">$59.99</span>
-                <a href="/src/views/addProduct.ejs">
-                  <button class="bg-[#d2a679] text-white px-4 py-2 rounded-md transition duration-300 ease-in-out hover:bg-[#b2825e] hover:scale-105">Agregar</button>
-                </a>
-            </div>
-        </div>
-      </div>
-    </div>
+    <% }) %>
     <%- include('./partials/footer.ejs') %>
   </body>
 </html>

@@ -2,7 +2,7 @@ const db = require("../models")
 
 module.exports = (sequelize, DataTypes)=> {
 
-    const alias = 'category'
+    const alias = 'Category'
 
     const cols = {
         name: {
@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes)=> {
 
     Category.associate = (model)=>{
         Category.hasMany(model.Product,{
-            as: "products",
+            as: "Product",
             foreignKey: "category_id"
         })
     };
