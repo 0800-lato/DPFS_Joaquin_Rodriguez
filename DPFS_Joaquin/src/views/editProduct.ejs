@@ -3,11 +3,12 @@
   <%- include('./partials/head.ejs') %> <%- include('./partials/navbar.ejs') %>
   <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
     <h2 class="text-2xl font-semibold text-center mb-4">Editar Producto</h2>
+    <ul class="errors"></ul>
     <form
       action="/product/edit/<%= modelEdit.id %>?_method=PUT"
       method="POST"
       enctype="multipart/form-data"
-      class="space-y-4"
+      class="form-data space-y-4"
     >
       <div class="flex flex-col">
         <label class="font-semibold text-gray-700">Nombre del Producto</label>
@@ -69,6 +70,7 @@
       </button>
     </form>
   </div>
-
   <footer><%- include('./partials/footer.ejs') %></footer>
+  <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+  <script src="/validaciones/edit.js"></script>
 </html>
