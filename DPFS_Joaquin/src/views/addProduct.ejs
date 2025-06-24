@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %> <%- include('./partials/navbar.ejs') %>
+  <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+    <h2 class="text-2xl font-semibold text-center mb-4">Agregar Producto</h2>
+    <form
+      action="/product/addProduct"
+      method="POST"
+      enctype="multipart/form-data"
+      class="space-y-4"
+    >
+      <div class="flex flex-col">
+        <label class="font-semibold text-gray-700">Nombre del Producto</label>
+        <input
+          type="text"
+          name="name"
+          placeholder="Ej: Camiseta Deportiva"
+          class="w-full p-2 border rounded-md"
+        />
+        <% if (locals.errors?.name) { %>
+        <p class="error"><%= locals.errors.name.msg %></p>
+        <% } %>
+      </div>
+
+      <div class="flex flex-col">
+        <label class="font-semibold text-gray-700">Precio</label>
+        <input
+          type="number"
+          name="price"
+          placeholder="Ej: 49.99"
+          class="w-full p-2 border rounded-md"
+        />
+        <% if (locals.errors?.price) { %>
+        <p class="error"><%= locals.errors.price.msg %></p>
+        <% } %>
+      </div>
+
+      <div class="flex flex-col">
+        <label class="font-semibold text-gray-700">Descripción</label>
+        <textarea
+          name="description"
+          placeholder="Descripción breve del producto"
+          class="w-full p-2 border rounded-md"
+        ></textarea>
+        <% if (locals.errors?.description) { %>
+        <p class="error"><%= locals.errors.description.msg %></p>
+        <% } %>
+      </div>
+
+      <div class="flex flex-col">
+        <label class="font-semibold text-gray-700">Imagen</label>
+        <input
+          type="file"
+          name="image"
+          accept="image/*"
+          class="w-full p-2 border rounded-md"
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="w-full bg-[#d2a679] text-white py-2 rounded-md hover:bg-[#b2825e] transition duration-300"
+      >
+        <i class="fas fa-plus"></i> Agregar Producto
+      </button>
+    </form>
+  </div>
+
+  <footer><%- include('./partials/footer.ejs') %></footer>
+</html>
